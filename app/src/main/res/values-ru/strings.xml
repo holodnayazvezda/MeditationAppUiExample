@@ -3,4 +3,19 @@
     <string name="app_name">Медитационное приложение</string>
     <string name="welcome_to_sleep">Добро пожаловать спать</string>
     <string name="get_started">НАЧНЕМ</string>
+
+    <string name="home">Дом</string>
+    <string name="sleep">Спать</string>
+    <string name="meditate">Медитировать</string>
+    <string name="music">Музыка</string>
+    <string name="afsar">Аватар</string>
+
+    <string name="sleep_stories">Сказка на ночь</string>
+    <string name="soothing_bedtime_1">Soothing bedtime stories to help your fall</string>
+    <string name="soothing_bedtime_2">into a deep and natural sleep</string>
+    
+    <string name="all">Все</string>
+    <string name="my">Мое</string>
+    <string name="anxious">Озабоченный</string>
+    <string name="kids">Дети</string>
 </resources>

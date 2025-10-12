@@ -14,23 +14,23 @@ fun NavigationHost(
         modifier: Modifier = Modifier,
         navHostController: NavHostController = rememberNavController()
 ) {
-        NavHost(
-                navController = navHostController,
-                startDestination = NavRoutes.WELCOME_SCREEN.route
-        ) {
-                composable(NavRoutes.WELCOME_SCREEN.route) {
-                        WelcomeScreen(
-                                modifier = modifier,
-                                nextScreen = {
-                                        navHostController.navigate(NavRoutes.MAIN_SCREEN.route)
-                                }
-                        )
+    NavHost(
+        navController = navHostController,
+        startDestination = NavRoutes.WELCOME_SCREEN.route
+    ) {
+        composable(NavRoutes.WELCOME_SCREEN.route) {
+            WelcomeScreen(
+                modifier = modifier,
+                nextScreen = {
+                        navHostController.navigate(NavRoutes.MAIN_SCREEN.route)
                 }
-
-                composable(NavRoutes.MAIN_SCREEN.route) {
-                        MainScreen(
-                                modifier = modifier
-                        )
-                }
+            )
         }
+
+        composable(NavRoutes.MAIN_SCREEN.route) {
+            MainScreen(
+                modifier = modifier,
+            )
+        }
+    }
 }
