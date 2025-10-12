@@ -3,10 +3,12 @@ package com.example.meditattionappuiexample.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val DarkBackground = Color(0xFF0B1538)
-val DarkTextPrimary = Color(0xFFFFFFFF)
+val DarkHeaderPrimary = Color(0xFFE6E7F2)
+val DarkHeaderSecondary = Color(0xFFFFECCC)
+val DarkTextPrimary = Color(0xFFEBEAEC)
 val DarkTextSecondary = Color(0xFFE3E3E3)
 val DarkButton = Color(0xFF9FA8FF)
-val DarkButtonText = Color(0xFFFFFFFF)
+val DarkButtonText = Color(0xFFF6F1FB)
 
 val DarkSurface = Color(0xFF18224C)
 val DarkAccent = Color(0xFF9FA8FF)

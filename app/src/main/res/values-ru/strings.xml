@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Медитационное приложение</string>
+    <string name="welcome_to_sleep">Добро пожаловать спать</string>
+    <string name="get_started">НАЧНЕМ</string>
+</resources>

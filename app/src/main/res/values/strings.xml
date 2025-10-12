@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MeditattionAppUiExample</string>
+    <string name="app_name">Meditation App</string>
+    <string name="welcome_to_sleep">Welcome to sleep</string>
+    <string name="get_started">GET STARTED</string>
 </resources>

@@ -8,7 +8,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-val HelveticaNeue = FontFamily(
+val HelveticaNeueFontFamily = FontFamily(
     Font(R.font.helvetica_neue_regular, FontWeight.Normal),
     Font(R.font.helvetica_neue_italic, FontWeight.Normal),
     Font(R.font.helvetica_neue_bold, FontWeight.Bold)
@@ -16,7 +16,7 @@ val HelveticaNeue = FontFamily(
 
 val Typography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = HelveticaNeue,
+        fontFamily = HelveticaNeueFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
