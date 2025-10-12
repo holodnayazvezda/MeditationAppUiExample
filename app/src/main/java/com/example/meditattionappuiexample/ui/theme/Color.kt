@@ -2,10 +2,22 @@ package com.example.meditattionappuiexample.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val DarkBackground = Color(0xFF0B1538)
+val DarkTextPrimary = Color(0xFFFFFFFF)
+val DarkTextSecondary = Color(0xFFE3E3E3)
+val DarkButton = Color(0xFF9FA8FF)
+val DarkButtonText = Color(0xFFFFFFFF)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val DarkSurface = Color(0xFF18224C)
+val DarkAccent = Color(0xFF9FA8FF)
+val DarkHighlight = Color(0xFFFFE38E)
+
+
+val LightBackground = Color(0xFFFFFFFF)
+val LightTextPrimary = Color(0xFF0B1538)
+val LightTextSecondary = Color(0xFF555555)
+val LightButton = Color(0xFF6C63FF)
+val LightButtonText = Color(0xFFFFFFFF)
+val LightSurface = Color(0xFFE8EAFD)
+val LightAccent = Color(0xFF6C63FF)
+val LightHighlight = Color(0xFFFFD46B)
