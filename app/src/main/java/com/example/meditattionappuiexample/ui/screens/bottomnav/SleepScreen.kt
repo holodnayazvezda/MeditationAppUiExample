@@ -19,6 +19,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.meditattionappuiexample.R
 import com.example.meditattionappuiexample.ui.components.OceanMoonBlock
 import com.example.meditattionappuiexample.ui.components.SleepScreenList
@@ -28,7 +30,9 @@ import com.example.meditattionappuiexample.ui.theme.DarkTextPrimary
 import com.example.meditattionappuiexample.ui.theme.HelveticaNeueFontFamily
 
 @Composable
-fun SleepScreen(modifier: Modifier = Modifier) {
+fun SleepScreen(
+    globalNavController: NavHostController
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -74,7 +78,7 @@ fun SleepScreen(modifier: Modifier = Modifier) {
             Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            SleepScreenList()
+            SleepScreenList(globalNavController)
         }
     }
 }

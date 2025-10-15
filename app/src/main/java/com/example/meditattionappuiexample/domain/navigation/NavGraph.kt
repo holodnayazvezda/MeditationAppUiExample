@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.meditattionappuiexample.ui.screens.MainScreen
+import com.example.meditattionappuiexample.ui.screens.PlayOptionScreen
 import com.example.meditattionappuiexample.ui.screens.WelcomeScreen
 
 @Composable
@@ -30,6 +31,14 @@ fun NavigationHost(
         composable(NavRoutes.MAIN_SCREEN.route) {
             MainScreen(
                 modifier = modifier,
+                navHostController
+            )
+        }
+        composable(
+            NavRoutes.PLAY_OPTION_SCREEN.route
+        ) {
+            PlayOptionScreen(
+                navHostController
             )
         }
     }
