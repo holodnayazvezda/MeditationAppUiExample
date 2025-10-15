@@ -18,4 +18,9 @@
     <string name="my">My</string>
     <string name="anxious">Anxious</string>
     <string name="kids">Kids</string>
+
+    <string name="oceanmoon">The Ocean Moon</string>
+    <string name="oceanmoon_info1">Non-stop 8- hour mixes of our</string>
+    <string name="oceanmoon_info2">most popular sleep audio</string>
+
 </resources>

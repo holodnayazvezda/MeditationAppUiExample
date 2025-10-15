@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.meditattionappuiexample.R
+import com.example.meditattionappuiexample.data.models.NavItem
 import com.example.meditattionappuiexample.domain.navigation.BottomNavRoutes
 
 @Composable
@@ -40,7 +41,11 @@ fun BottomNavigationBar(
     val items = listOf(
         NavItem(BottomNavRoutes.HOME_SCREEN, stringResource(R.string.home), R.drawable.ic_home),
         NavItem(BottomNavRoutes.SLEEP_SCREEN, stringResource(R.string.sleep), R.drawable.ic_sleep),
-        NavItem(BottomNavRoutes.MEDITATE_SCREEN, stringResource(R.string.meditate), R.drawable.ic_meditate),
+        NavItem(
+            BottomNavRoutes.MEDITATE_SCREEN,
+            stringResource(R.string.meditate),
+            R.drawable.ic_meditate
+        ),
         NavItem(BottomNavRoutes.MUSIC_SCREEN, stringResource(R.string.music), R.drawable.ic_music),
         NavItem(BottomNavRoutes.AFSAR_SCREEN, stringResource(R.string.afsar), R.drawable.ic_afsar)
     )

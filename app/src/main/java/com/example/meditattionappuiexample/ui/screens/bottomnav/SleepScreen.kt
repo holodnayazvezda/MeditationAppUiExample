@@ -20,6 +20,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.meditattionappuiexample.R
+import com.example.meditattionappuiexample.ui.components.OceanMoonBlock
+import com.example.meditattionappuiexample.ui.components.SleepScreenList
 import com.example.meditattionappuiexample.ui.components.SleepScreenRow
 import com.example.meditattionappuiexample.ui.theme.DarkHeaderPrimary
 import com.example.meditattionappuiexample.ui.theme.DarkTextPrimary
@@ -28,7 +30,8 @@ import com.example.meditattionappuiexample.ui.theme.HelveticaNeueFontFamily
 @Composable
 fun SleepScreen(modifier: Modifier = Modifier) {
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
     ) {
         Image(
             modifier = Modifier.fillMaxWidth(),
@@ -65,5 +68,13 @@ fun SleepScreen(modifier: Modifier = Modifier) {
         )
         Spacer(Modifier.height(25.dp))
         SleepScreenRow()
+        Spacer(Modifier.height(20.dp))
+        OceanMoonBlock()
+        Column(
+            Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            SleepScreenList()
+        }
     }
 }

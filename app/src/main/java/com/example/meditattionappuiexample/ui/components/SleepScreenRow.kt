@@ -16,16 +16,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.meditattionappuiexample.R
+import com.example.meditattionappuiexample.data.models.SleepScreenRowItemDTO
 import com.example.meditattionappuiexample.ui.theme.DarkAccent
 
 @Composable
 fun SleepScreenRow() {
     val cardsData = listOf(
-        SleepScreenRowItem(stringResId = R.string.all, iconResId = R.drawable.all),
-        SleepScreenRowItem(stringResId = R.string.my, iconResId = R.drawable.my),
-        SleepScreenRowItem(stringResId = R.string.anxious, iconResId = R.drawable.anxious),
-        SleepScreenRowItem(stringResId = R.string.sleep, iconResId = R.drawable.sleep),
-        SleepScreenRowItem(stringResId = R.string.kids, iconResId = R.drawable.kids)
+        SleepScreenRowItemDTO(stringResId = R.string.all, iconResId = R.drawable.all),
+        SleepScreenRowItemDTO(stringResId = R.string.my, iconResId = R.drawable.my),
+        SleepScreenRowItemDTO(stringResId = R.string.anxious, iconResId = R.drawable.anxious),
+        SleepScreenRowItemDTO(stringResId = R.string.sleep, iconResId = R.drawable.sleep),
+        SleepScreenRowItemDTO(stringResId = R.string.kids, iconResId = R.drawable.kids)
     )
 
     var selectedIndex by remember { mutableStateOf(0) }

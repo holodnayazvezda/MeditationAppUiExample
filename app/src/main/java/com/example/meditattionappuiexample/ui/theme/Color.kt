@@ -2,6 +2,8 @@ package com.example.meditattionappuiexample.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val DarkText = Color(0xFF3F414E)
+val GreyText = Color(0xFF98A1BD)
 val DarkBackground = Color(0xFF0B1538)
 val DarkHeaderPrimary = Color(0xFFE6E7F2)
 val DarkHeaderSecondary = Color(0xFFFFECCC)

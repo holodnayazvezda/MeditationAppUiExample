@@ -1,4 +1,4 @@
-package com.example.meditattionappuiexample.ui.components
+package com.example.meditattionappuiexample.data.models
 
 import com.example.meditattionappuiexample.domain.navigation.BottomNavRoutes
 

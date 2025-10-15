@@ -18,4 +18,8 @@
     <string name="my">Мое</string>
     <string name="anxious">Озабоченный</string>
     <string name="kids">Дети</string>
+
+    <string name="oceanmoon">Океанская Луна</string>
+    <string name="oceanmoon_info1">Непрекращающийся 8ми часовой микс</string>
+    <string name="oceanmoon_info2">самых популярных песен для сна</string>
 </resources>
