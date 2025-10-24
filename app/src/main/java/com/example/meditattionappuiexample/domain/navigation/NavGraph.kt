@@ -9,11 +9,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.meditattionappuiexample.ui.screens.MainScreen
 import com.example.meditattionappuiexample.ui.screens.PlayOptionScreen
 import com.example.meditattionappuiexample.ui.screens.WelcomeScreen
+import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreenViewModel
 
 @Composable
 fun NavigationHost(
         modifier: Modifier = Modifier,
-        navHostController: NavHostController = rememberNavController()
+        navHostController: NavHostController = rememberNavController(),
+        sleepScreenViewModel: SleepScreenViewModel
 ) {
     NavHost(
         navController = navHostController,
@@ -31,14 +33,16 @@ fun NavigationHost(
         composable(NavRoutes.MAIN_SCREEN.route) {
             MainScreen(
                 modifier = modifier,
-                navHostController
+                navController = navHostController,
+                sleepScreenViewModel = sleepScreenViewModel
             )
         }
         composable(
             NavRoutes.PLAY_OPTION_SCREEN.route
         ) {
             PlayOptionScreen(
-                navHostController
+                navController = navHostController,
+                sleepScreenViewModel = sleepScreenViewModel
             )
         }
     }

@@ -1,5 +1,6 @@
 package com.example.meditattionappuiexample.ui.components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -24,6 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.meditattionappuiexample.R
 import com.example.meditattionappuiexample.data.models.SleepScreenCardDTO
 import com.example.meditattionappuiexample.domain.navigation.NavRoutes
+import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreenViewModel
 import com.example.meditattionappuiexample.ui.theme.DarkTextPrimary
 import com.example.meditattionappuiexample.ui.theme.GreyText
 import com.example.meditattionappuiexample.ui.theme.HelveticaNeueFontFamily
@@ -31,11 +33,12 @@ import com.example.meditattionappuiexample.ui.theme.HelveticaNeueFontFamily
 @Composable
 fun SleepScreenCard(
     sleepScreenCardDTO: SleepScreenCardDTO,
-    globalNavController: NavHostController
+    globalNavController: NavHostController,
+    sleepScreenViewModel: SleepScreenViewModel
 ) {
     Column(
         Modifier.wrapContentSize().clickable {
-            globalNavController.previousBackStackEntry?.savedStateHandle?.set("cardDTO", sleepScreenCardDTO)
+            sleepScreenViewModel.updateSelectedItemId(sleepScreenCardDTO.cardID)
             globalNavController.navigate(NavRoutes.PLAY_OPTION_SCREEN.route)
         }
     ) {
@@ -71,11 +74,13 @@ fun SleepScreenCard(
 }
 
 
+@SuppressLint("ViewModelConstructorInComposable")
 @Preview
 @Composable
 private fun SleepScreenCardPreview() {
     SleepScreenCard(
         SleepScreenCardDTO(
+            cardID = 0,
             imageResId = R.drawable.image_night_sleep,
             name = "Night Island",
             durationMinutes = 45,
@@ -85,6 +90,7 @@ private fun SleepScreenCardPreview() {
             favourites = 24234,
             listenings = 34234
         ),
-        rememberNavController()
+        rememberNavController(),
+        SleepScreenViewModel()
     )
 }

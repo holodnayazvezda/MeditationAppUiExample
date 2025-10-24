@@ -1,6 +1,6 @@
 package com.example.meditattionappuiexample.ui.components
 
-import androidx.compose.foundation.clickable
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,10 +20,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.meditattionappuiexample.R
 import com.example.meditattionappuiexample.data.models.SleepScreenCardDTO
-import com.example.meditattionappuiexample.domain.navigation.NavRoutes
+import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreenViewModel
 
 val cards = listOf(
     SleepScreenCardDTO(
+        cardID = 1,
         imageResId = R.drawable.image_night_sleep,
         name = "Night Island",
         durationMinutes = 45,
@@ -34,6 +35,7 @@ val cards = listOf(
         listenings = 34234
     ),
     SleepScreenCardDTO(
+        cardID = 2,
         imageResId = R.drawable.image_sweet_sleep,
         name = "Sweet Sleep",
         durationMinutes = 45,
@@ -44,6 +46,7 @@ val cards = listOf(
         listenings = 34234
     ),
     SleepScreenCardDTO(
+        cardID = 3,
         imageResId = R.drawable.image_moon_clouds,
         name = "Moon Clouds",
         durationMinutes = 30,
@@ -54,6 +57,7 @@ val cards = listOf(
         listenings = 34234
     ),
     SleepScreenCardDTO(
+        cardID = 4,
         imageResId = R.drawable.image_sweet_wleep,
         name = "Good Night",
         durationMinutes = 30,
@@ -67,7 +71,8 @@ val cards = listOf(
 
 @Composable
 fun SleepScreenList(
-    globalNavController: NavHostController
+    globalNavController: NavHostController,
+    sleepScreenViewModel: SleepScreenViewModel
 ) {
     Column(
         modifier = Modifier
@@ -87,7 +92,8 @@ fun SleepScreenList(
                     rowCards.forEach { card ->
                         SleepScreenCard(
                             sleepScreenCardDTO = card,
-                            globalNavController = globalNavController
+                            globalNavController = globalNavController,
+                            sleepScreenViewModel = sleepScreenViewModel
                         )
                     }
 
@@ -101,8 +107,12 @@ fun SleepScreenList(
 }
 
 
+@SuppressLint("ViewModelConstructorInComposable")
 @Preview(showBackground = true)
 @Composable
 private fun SleepScreenListPreview() {
-    SleepScreenList(rememberNavController())
+    SleepScreenList(
+        globalNavController = rememberNavController(),
+        sleepScreenViewModel = SleepScreenViewModel()
+    )
 }

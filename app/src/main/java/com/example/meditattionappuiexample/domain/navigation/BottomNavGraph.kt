@@ -6,13 +6,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.meditattionappuiexample.ui.screens.bottomnav.*
-import javax.microedition.khronos.opengles.GL
+import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreen
+import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreenViewModel
 
 
 @Composable
 fun BottomNavGraph(
     navController: NavHostController,
     globalNavController: NavHostController,
+    sleepScreenViewModel: SleepScreenViewModel,
     modifier: Modifier = Modifier
 ) {
     NavHost(
@@ -21,7 +23,12 @@ fun BottomNavGraph(
         modifier = modifier
     ) {
         composable(BottomNavRoutes.HOME_SCREEN.route) { HomeScreen() }
-        composable(BottomNavRoutes.SLEEP_SCREEN.route) { SleepScreen(globalNavController) }
+        composable(BottomNavRoutes.SLEEP_SCREEN.route) {
+            SleepScreen(
+                globalNavController,
+                sleepScreenViewModel
+            )
+        }
         composable(BottomNavRoutes.MEDITATE_SCREEN.route) { MeditateScreen() }
         composable(BottomNavRoutes.MUSIC_SCREEN.route) { MusicScreen() }
         composable(BottomNavRoutes.AFSAR_SCREEN.route) { AfsarScreen() }
