@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import com.example.meditattionappuiexample.ui.screens.bottomnav.*
 import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreen
 import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreenViewModel
+import com.example.meditattionappuiexample.ui.screens.play_option_screen.PlayOptionScreenViewModel
 
 
 @Composable
@@ -15,6 +16,7 @@ fun BottomNavGraph(
     navController: NavHostController,
     globalNavController: NavHostController,
     sleepScreenViewModel: SleepScreenViewModel,
+    playOptionScreenViewModel: PlayOptionScreenViewModel,
     modifier: Modifier = Modifier
 ) {
     NavHost(
@@ -30,7 +32,12 @@ fun BottomNavGraph(
             )
         }
         composable(BottomNavRoutes.MEDITATE_SCREEN.route) { MeditateScreen() }
-        composable(BottomNavRoutes.MUSIC_SCREEN.route) { MusicScreen() }
+        composable(BottomNavRoutes.MUSIC_SCREEN.route) {
+            MusicScreen(
+                playOptionScreenViewModel = playOptionScreenViewModel,
+                bottomNavController = navController
+            )
+        }
         composable(BottomNavRoutes.AFSAR_SCREEN.route) { AfsarScreen() }
     }
 }

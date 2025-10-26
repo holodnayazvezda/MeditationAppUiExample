@@ -3,7 +3,7 @@ package com.example.meditattionappuiexample.data.models
 import androidx.annotation.DrawableRes
 
 data class SleepScreenCardDTO(
-    val cardID: Int,
+    val cardID: Int = 0,
     @DrawableRes val imageResId: Int = 0,
     val name: String = "",
     val durationMinutes: Int = 0,

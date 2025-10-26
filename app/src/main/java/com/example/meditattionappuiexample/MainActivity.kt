@@ -15,10 +15,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.meditattionappuiexample.domain.navigation.NavigationHost
 import com.example.meditattionappuiexample.ui.screens.bottomnav.sleep_screen.SleepScreenViewModel
+import com.example.meditattionappuiexample.ui.screens.play_option_screen.PlayOptionScreenViewModel
 import com.example.meditattionappuiexample.ui.theme.MeditattionAppUiExampleTheme
 
 class MainActivity : ComponentActivity() {
     private val sleepScreenViewModel by viewModels<SleepScreenViewModel>()
+    private val playOptionScreenViewModel by viewModels<PlayOptionScreenViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,8 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     NavigationHost(
                         modifier = Modifier.padding(innerPadding),
-                        sleepScreenViewModel = sleepScreenViewModel
+                        sleepScreenViewModel = sleepScreenViewModel,
+                        playOptionScreenViewModel = playOptionScreenViewModel
                     )
                 }
             }
