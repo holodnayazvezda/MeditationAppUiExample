@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.meditattionappuiexample.R
+import com.example.meditattionappuiexample.ui.components.MusicSeekBar
 import com.example.meditattionappuiexample.ui.screens.play_option_screen.PlayOptionScreenViewModel
 import com.example.meditattionappuiexample.ui.theme.DarkButton
 import com.example.meditattionappuiexample.ui.theme.DarkHeaderPrimary
@@ -55,6 +56,8 @@ fun MusicScreen(
 ) {
     val selectedCardData = playOptionScreenViewModel.selectedCardDTO.collectAsState().value
     var isMusicPlayed by remember { mutableStateOf(true) }
+    var position by remember { mutableStateOf(0.1f) }
+    var buffered by remember { mutableStateOf(0.75f) }
 
     Box(
         Modifier.fillMaxSize()
@@ -155,7 +158,7 @@ fun MusicScreen(
             ) {
                 IconButton(
                     onClick = {
-
+                        position = (position - 0.05f).coerceAtLeast(0f)
                     },
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = Color.Transparent
@@ -208,7 +211,7 @@ fun MusicScreen(
 
                 IconButton(
                     onClick = {
-
+                        position = (position + 0.05f).coerceAtLeast(1f)
                     },
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = Color.Transparent
@@ -223,26 +226,38 @@ fun MusicScreen(
                 }
             }
             Spacer(Modifier.height(55.dp))
-            Row(
-                Modifier.fillMaxWidth().padding(horizontal = 20.dp),
-                verticalAlignment = Alignment.CenterVertically
+            Column(
+                Modifier.fillMaxWidth().padding(horizontal = 20.dp)
             ) {
-                Box(
-                    modifier = Modifier.fillMaxWidth().background(Color.White).height(2.dp).weight(0.12f)
+                MusicSeekBar(
+                    progress = position,
+                    buffered = buffered,
+                    onValueChange = { new ->
+                        position = new
+                    },
+                    modifier = Modifier.fillMaxWidth()
                 )
-                Box(
-                    modifier = Modifier.clip(CircleShape).background(DarkButton.copy(alpha = 0.35f)).size(17.dp).weight(0.05f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Box(
-                        modifier = Modifier.clip(CircleShape).background(DarkButton).size(13.dp),
-                    )
-                }
-                Box(
-                    modifier = Modifier.fillMaxWidth().alpha(0.5f).background(Color(0xFF47557E)).height(2.dp).weight(0.83f)
-                )
-            }
 
+            }
+//            Row(
+//                Modifier.fillMaxWidth().padding(horizontal = 20.dp),
+//                verticalAlignment = Alignment.CenterVertically
+//            ) {
+//                Box(
+//                    modifier = Modifier.fillMaxWidth().background(Color.White).height(2.dp).weight(0.12f)
+//                )
+//                Box(
+//                    modifier = Modifier.clip(CircleShape).background(DarkButton.copy(alpha = 0.35f)).size(17.dp).weight(0.05f),
+//                    contentAlignment = Alignment.Center
+//                ) {
+//                    Box(
+//                        modifier = Modifier.clip(CircleShape).background(DarkButton).size(13.dp),
+//                    )
+//                }
+//                Box(
+//                    modifier = Modifier.fillMaxWidth().alpha(0.5f).background(Color(0xFF47557E)).height(2.dp).weight(0.83f)
+//                )
+//            }
             Spacer(modifier = Modifier.height(15.dp))
             Row(
                 Modifier.fillMaxWidth(),
