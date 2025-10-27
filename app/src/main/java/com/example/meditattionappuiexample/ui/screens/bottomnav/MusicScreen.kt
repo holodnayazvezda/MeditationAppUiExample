@@ -26,6 +26,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -39,6 +40,7 @@ import com.example.meditattionappuiexample.R
 import com.example.meditattionappuiexample.ui.components.SelfMusicSeekBar
 import com.example.meditattionappuiexample.ui.components.SimpleMusicSeekBar
 import com.example.meditattionappuiexample.ui.screens.play_option_screen.PlayOptionScreenViewModel
+import com.example.meditattionappuiexample.ui.theme.DarkButton
 import com.example.meditattionappuiexample.ui.theme.DarkHeaderPrimary
 import com.example.meditattionappuiexample.ui.theme.DarkSurface
 import com.example.meditattionappuiexample.ui.theme.DarkText
@@ -224,38 +226,38 @@ fun MusicScreen(
                 }
             }
             Spacer(Modifier.height(55.dp))
-            Column(
-                Modifier.fillMaxWidth().padding(horizontal = 20.dp)
-            ) {
-                SimpleMusicSeekBar(
-                    progress = position,
-                    buffered = buffered,
-                    onValueChange = { new ->
-                        position = new
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                )
-
-            }
-//            Row(
-//                Modifier.fillMaxWidth().padding(horizontal = 20.dp),
-//                verticalAlignment = Alignment.CenterVertically
+//            Column(
+//                Modifier.fillMaxWidth().padding(horizontal = 20.dp)
 //            ) {
-//                Box(
-//                    modifier = Modifier.fillMaxWidth().background(Color.White).height(2.dp).weight(0.12f)
+//                SimpleMusicSeekBar(
+//                    progress = position,
+//                    buffered = buffered,
+//                    onValueChange = { new ->
+//                        position = new
+//                    },
+//                    modifier = Modifier.fillMaxWidth()
 //                )
-//                Box(
-//                    modifier = Modifier.clip(CircleShape).background(DarkButton.copy(alpha = 0.35f)).size(17.dp).weight(0.05f),
-//                    contentAlignment = Alignment.Center
-//                ) {
-//                    Box(
-//                        modifier = Modifier.clip(CircleShape).background(DarkButton).size(13.dp),
-//                    )
-//                }
-//                Box(
-//                    modifier = Modifier.fillMaxWidth().alpha(0.5f).background(Color(0xFF47557E)).height(2.dp).weight(0.83f)
-//                )
+//
 //            }
+            Row(
+                Modifier.fillMaxWidth().padding(horizontal = 20.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxWidth().background(Color.White).height(2.dp).weight(0.12f)
+                )
+                Box(
+                    modifier = Modifier.clip(CircleShape).background(DarkButton.copy(alpha = 0.35f)).size(17.dp).weight(0.05f),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Box(
+                        modifier = Modifier.clip(CircleShape).background(DarkButton).size(13.dp),
+                    )
+                }
+                Box(
+                    modifier = Modifier.fillMaxWidth().alpha(0.5f).background(Color(0xFF47557E)).height(2.dp).weight(0.83f)
+                )
+            }
             Spacer(modifier = Modifier.height(15.dp))
             Row(
                 Modifier.fillMaxWidth(),
