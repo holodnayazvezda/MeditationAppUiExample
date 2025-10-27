@@ -26,21 +26,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.meditattionappuiexample.R
-import com.example.meditattionappuiexample.ui.components.MusicSeekBar
+import com.example.meditattionappuiexample.ui.components.SelfMusicSeekBar
+import com.example.meditattionappuiexample.ui.components.SimpleMusicSeekBar
 import com.example.meditattionappuiexample.ui.screens.play_option_screen.PlayOptionScreenViewModel
-import com.example.meditattionappuiexample.ui.theme.DarkButton
 import com.example.meditattionappuiexample.ui.theme.DarkHeaderPrimary
 import com.example.meditattionappuiexample.ui.theme.DarkSurface
 import com.example.meditattionappuiexample.ui.theme.DarkText
@@ -211,7 +209,7 @@ fun MusicScreen(
 
                 IconButton(
                     onClick = {
-                        position = (position + 0.05f).coerceAtLeast(1f)
+                        position = (position + 0.05f)
                     },
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = Color.Transparent
@@ -229,7 +227,7 @@ fun MusicScreen(
             Column(
                 Modifier.fillMaxWidth().padding(horizontal = 20.dp)
             ) {
-                MusicSeekBar(
+                SimpleMusicSeekBar(
                     progress = position,
                     buffered = buffered,
                     onValueChange = { new ->

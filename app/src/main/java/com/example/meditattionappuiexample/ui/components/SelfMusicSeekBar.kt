@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.max
  * @param colors настройки цветов
  */
 @Composable
-fun MusicSeekBar(
+fun SelfMusicSeekBar(
     progress: Float,
     buffered: Float = 0f,
     onValueChange: (Float) -> Unit,
@@ -45,7 +45,7 @@ fun MusicSeekBar(
     playedTrackHeight: Dp = 4.dp,
     thumbRadius: Dp = 12.dp,
     innerDotRadius: Dp = 5.dp,
-    colors: SeekBarColors = SeekBarColors()
+    colors: SelfSeekBarColors = SelfSeekBarColors()
 ) {
     // clamp inputs
     val safeProgress = progress.coerceIn(0f, 1f)
@@ -150,7 +150,7 @@ fun MusicSeekBar(
 }
 
 /** simple holder for color customization */
-data class SeekBarColors(
+data class SelfSeekBarColors(
     val trackColor: Color = Color(0xFF2B2B3A), // background thin track
     val bufferedColor: Color = Color(0x55121212), // translucent
     val playedGradient: List<Color> = listOf(Color(0xFF7C4DFF), Color(0xFF6A3BFF)), // purple-ish gradient
